@@ -1,0 +1,38 @@
+<html>
+<head>
+<title> Fallzeit Tabelle </title>
+<meta charset="UTF-8">
+
+
+</head>
+<body>
+<h1> Fall </h1>
+<table border="1px">
+<script>
+var fallzeit=0;
+ var g = 9.81 ;
+ 
+ for (var h =2; h <101; h=h+2) {
+ 
+fallzeit = Math.sqrt(2*h/g);
+fallzeit = fallzeit*100
+var blau = Math.round (fallzeit)
+blau = blau/100
+
+ 
+ 
+ document.write("<tr> <td>" + h +"</td> <td>" + blau + "</td> </tr>")
+ }
+
+
+</script>
+
+</table>
+
+
+</body>
+
+
+
+
+</html>
