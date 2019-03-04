@@ -1,0 +1,24 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Handysturz</title>
+	
+	
+	<script>
+	var höhe = prompt ("geben Sie die Höhe ein");
+	var speed = Math.sqrt(2*höhe/9.81);
+    var ausgabeText ="Dein Handy braucht " +speed+ " Sekunden bis es auf den Boden aufkommt!";
+	
+	alert(ausgabeText);
+    
+	
+	</script>
+	
+	
+	
+	</head>
+	
+	<body>
+	
+	</body>
+	</html>	
