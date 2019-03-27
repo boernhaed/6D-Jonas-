@@ -1,0 +1,111 @@
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Umrechner</title>
+
+    <script>
+    function dezBin() {
+	var zahl = parseInt(document.getElementById("eingabe1").value);
+
+	var erg = [];
+	while(zahl > 0) {
+		var rest = zahl%2;
+		erg.splice(0, 0, rest); // wert an erster stelle einfügen
+		zahl = Math.floor(zahl/2);
+	}
+
+	document.getElementById("ausgabe1").innerHTML = erg.join("");
+}
+
+function binDez() {
+	var eingabe = document.getElementById("eingabe2").value;
+
+	var ergebnis = 0;
+	for (var i = 0; i < eingabe.length; i++) {
+	  ergebnis += parseInt(eingabe.charAt(i)) * Math.pow(2, eingabe.length - i - 1);
+	}
+
+	document.getElementById("ausgabe2").innerHTML = ergebnis;
+}
+
+function dezHex() {
+	var zahl = parseInt(document.getElementById("eingabe3").value);
+
+	var erg = [];
+	while(zahl > 0) {
+		var rest = zahl%16
+		rest = dezHexChar(rest);
+		erg.splice(0, 0, rest); // wert an erster stelle einfügen
+		zahl = Math.floor(zahl/16);
+	}
+
+	document.getElementById("ausgabe3").innerHTML = erg.join("");
+}
+
+function dezHexChar(dez) {
+	if(dez == 10) { return "A"; }
+	else if(dez == 11) { return "B"; }
+	else if(dez == 12) { return "C"; }
+	else if(dez == 13) { return "D"; }
+	else if(dez == 14) { return "E"; }
+	else if(dez == 15) { return "F"; }
+	return dez;
+}
+
+function hexDez() {
+	var eingabe = document.getElementById("eingabe4").value;
+
+	var ergebnis = 0;
+	for (var i = 0; i < eingabe.length; i++) {
+		var wert = hexDezChar(eingabe.charAt(i));
+		ergebnis += wert * Math.pow(16, eingabe.length - i - 1);
+	}
+
+	document.getElementById("ausgabe4").innerHTML = ergebnis;
+}
+
+function hexDezChar(hex) {
+	if(hex == "A") { return 10; }
+	else if(hex == "B") { return 11; }
+	else if(hex == "C") { return 12; }
+	else if(hex == "D") { return 13; }
+	else if(hex == "E") { return 14; }
+	else if(hex == "F") { return 15; }
+	return parseInt(hex);
+}
+
+  </script>
+
+  </head>
+  <body>
+    <h1>Umrechner</h1>
+
+      <p> Dezimalzahl in Binärzahl: </p>
+        <input type="number" id="eingabe1">
+        <input type="button" value="Berechne Binärzahl" onclick="dezBin()"> <br>
+        <p id="ausgabe1"> </p>
+
+
+        <p> Binärzahl in Dezimalzahl</p>
+          <input type="text" id="eingabe2">
+          <input type="button" value="Berechne Dezimalzahl" onclick="binDez()"> <br>
+          <p id="ausgabe2"> </p>
+
+
+          <p> Dezimal in Hexadezimal</p>
+            <input type="number" id="eingabe3">
+            <input type="button" value="Berechne Hexadezimal" onclick="dezHex()"> <br>
+            <p id="ausgabe3"> </p>
+
+
+            <p> Hexadezimal in Dezimal</p>
+              <input type="text" id="eingabe4">
+              <input type="button" value="Berechne Dezimalzahl" onclick="hexDez()"> <br>
+              <p id="ausgabe4"> </p>
+
+
+
+
+      </body>
+</html>
