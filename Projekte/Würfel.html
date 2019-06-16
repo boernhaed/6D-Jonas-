@@ -1,0 +1,67 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Würfelsimulation</title>	
+<style>
+body {
+  background-color:#c1d879;
+}
+
+h1 {
+  color: black;
+  text-align: center;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+}
+</style>		
+<script>
+
+
+function wuerfeln() {
+		var zahlenArray = new Array(0,0,0,0,0,0,0); 
+		var ausgabeText = "Ausgabe:<br>";
+		var anzahlVersuche = parseInt(document.getElementById("eingabe").value);
+	
+	for(var i = 0; i <anzahlVersuche; i += 1 ) {
+		var wert = Math.random()*6 + 0.5;
+		wert = Math.round(wert);
+		zahlenArray[wert]++;
+			
+		}
+	
+	alert(zahlenArray);
+	//ausgabeText += "Du hast " + zahlenArray[6] + " mal einen 6er gewürfelt! (" + anzahlSechser/anzahlVersuche*100 + "%)";
+
+	for(var i = 0; i < zahlenArray.length; i++) {
+	ausgabeText += "Du hast " + zahlenArray[i] + " mal einen "+i+" gewürfelt! (" + zahlenArray[i]/anzahlVersuche*100 + "%)</br>";
+	}
+	
+	document.getElementById("ausgabe").innerHTML = ausgabeText;
+
+}
+
+
+
+
+
+
+
+
+</script>
+</head>
+
+<body>
+
+<h1>Würfelsimulation</h1>
+Anzahl der Würfe: <input type="text" id="eingabe"><br>
+<input type="button" value="Würfeln" onclick="wuerfeln()">
+
+<p id="ausgabe"></p>
+
+
+</body>
+
+</html>
