@@ -4,7 +4,7 @@
 <title>Würfelsimulation</title>	
 <style>
 body {
-  background-color:#c1d879;
+  background-color:#ffca99;
 }
 
 h1 {
@@ -33,10 +33,9 @@ function wuerfeln() {
 		}
 	
 	alert(zahlenArray);
-	//ausgabeText += "Du hast " + zahlenArray[6] + " mal einen 6er gewürfelt! (" + anzahlSechser/anzahlVersuche*100 + "%)";
 
 	for(var i = 0; i < zahlenArray.length; i++) {
-	ausgabeText += "Du hast " + zahlenArray[i] + " mal einen "+i+" gewürfelt! (" + zahlenArray[i]/anzahlVersuche*100 + "%)</br>";
+	ausgabeText += "Du hast " + zahlenArray[i] + " mal 1 "+i+" gewürfelt! (" + zahlenArray[i]/anzahlVersuche*100 + "%)</br>";
 	}
 	
 	document.getElementById("ausgabe").innerHTML = ausgabeText;
