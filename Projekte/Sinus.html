@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta charset="UTF-8">
+ <script src="p5.js"></script>
+
+<script>
+function setup() {
+createCanvas(window.innerWidth,window.innerHeight);
+fill(0);
+background("white");
+strokeWeight(10);
+}
+var h= window.innerHeight/2;
+var x=0;
+var y= 0;
+var yh= 500;
+function draw() {
+for(var i=0;i<90; i++){
+
+x=Math.floor(Math.random()*window.innerWidth);
+y= Math.floor(Math.random()*window.innerHeight);
+if(y<h+Math.sin(x/window.innerWidth*(Math.PI*2))*(window.innerHeight/2)){
+stroke("yellow");
+}
+else{
+stroke("lightblue");
+}
+point(x,y);
+}
+
+}
+</script>
+<style>
+body {
+margin: 0;
+}
+<style>
+</head>
+<body>
+
+</body>
+</html>
