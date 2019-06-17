@@ -1,0 +1,104 @@
+<html>
+<head>
+	<meta charset = "utf-8">
+	<title>Bilder Galerie</title>
+
+<style>
+	body {
+		background-image: url("Bildgal.jpg");
+		background-size: cover;
+		font-family: Calibri Light;
+		font-size: 100%;
+	}
+
+	h1 {
+		color: white;
+	  font-family: Calibri Light;
+	  font-size: 175%;
+	  boder:none;
+	}
+	.bg-text {
+	  background-color: rgb(0,0,0);
+	  background-color: rgba(0,0,0,0.6);
+	  border: 4px solid;
+	  border-style: groove;
+	  border-radius: 100px;
+	  margin: 100px 300px 200px;
+	  font-family: Calibri Light;
+	  font-size: 100%;
+	  background-color: lightblack;
+	   border-radius: 100px;
+	   padding: 5px;
+	 }
+
+	.button {
+		margin: 20px
+		background-color: rgb(0,0,0);
+	  background-color: rgba(0,0,0,0.6);
+	  border: 2px solid;
+	  border-style: groove;
+	  border-radius: 50%;
+		background-color: lightblack;
+		padding: 5px;
+		text-align: center;
+		border-radius: 50%;
+		color: white;
+	}
+
+	.button2 {
+		margin: 20px
+		background-color: rgb(0,0,0);
+		background-color: rgba(0,0,0,0.6);
+		border: 2px solid;
+		border-style: groove;
+		border-radius: 50%;
+		background-color: lightblack;
+		padding: 5px;
+		text-align: center;
+		border-radius: 50%;
+		color: white;
+	}
+
+	img {
+		border-style: groove;
+		border-radius: 50%;
+		border-radius: 10px;
+		height: 60%;
+		width: 70%;
+	}
+</style>
+<script>
+var index = 0;
+var bilder = ["See.jpg", "See2.jpg", "Pilz.jpg", "Eis.jpg", "Wasser.jpg"]
+function nextImage(){
+	index++;
+	if(index >=bilder.length){
+		index = 0
+	}
+	document.getElementById("bild1").src = bilder[index];
+}
+function prevImage(){
+	index--;
+	if(index < 0){
+		index = bilder.length - 1;
+	}
+	document.getElementById("bild1").src = bilder[index];
+}
+</script>
+</head>
+<body>
+<div class="bg-text">
+<center>
+<h1>Herbst- und Sommerbilder</h1>
+</center>
+<br>
+<center>
+<img id="bild1" width="60%" src="IMG_1_Herbst.jpeg">
+<br>
+<br>
+<input type="button" class="button" value="<" onclick="prevImage()">
+<input type="button" class="button2" value=">" onclick="nextImage()">
+</div>
+</center>
+</body>
+</html>
