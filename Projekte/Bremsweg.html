@@ -1,0 +1,43 @@
+<html>
+
+<head>
+
+	<meta charset="UTF-8">
+	<title>Bremsweg</title>
+
+
+</head>
+
+<body>
+
+	<h1>Bremsweg berechen</h1>
+
+<center>
+
+	<table border="1px">
+
+	<tr><th>Geschwindigkeit km/h</th><th>Anhalteweg in m</th></tr>
+		<script>
+
+
+		for(var v = 10 ; v <= 300 ; v += 10 ) {
+		var s_reaktionszeit = v/10*3 ;
+		var s_bremsweg = (v/10) * (v/10) ;
+
+		var s = s_reaktionszeit + s_bremsweg ;
+
+		document.write("<tr>") ;
+		document.write("<td>" + v + "</td>") ;
+		document.write("<td>" + s + "</td>") ;
+		document.write("</tr>") ;
+
+		}
+
+		</script>
+
+	</table>
+</center
+
+</body>
+
+</html>
