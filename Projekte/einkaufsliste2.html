@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Einkaufsliste</title>
+    <style>
+        body {
+            background-color:#ffca99;
+          }
+    </style>
+
+    <script>
+      var liste = []
+
+      function hinzufuegen() {
+        var eintrag = document.getElementById("produkt").value;
+        liste[liste.length] = eintrag;
+
+        ausgabe();
+      }
+
+      function ausgabe() {
+        var Ausgabe = "Deine Liste besteht aus: <br>";
+        for (var p = 0; p < liste.length;p++) {
+          Ausgabe += liste[p]+"<br>";
+          document.getElementById("Ausgabe").innerHTML = Ausgabe;
+        }
+      }
+
+      function selectionSort() {
+	for(var i = 0; i < liste.length; i++) {
+		var min = i;
+		for(var j = min; j < liste.length; j++) {
+			if(liste[min] > liste[j]) {
+				min = j;
+			   }
+		  }
+
+		var hilfe = liste[min];
+		liste[min] =liste[i];
+		liste[i] = hilfe;
+	 }
+   ausgabe();
+      }
+
+      function sortieren() {
+        liste.sort();
+        ausgabe();
+      }
+      function bubbleSort(){
+        var vertauscht = true;
+        while (vertauscht){
+          vertauscht = false;
+          for (var i = 0; i < liste.length - 1; i++){
+            if(liste[i] > liste[i+1]){
+              vertauscht = true
+            vertausche (i, i+1);
+            }
+          }
+        }
+        ausgabe ();
+      }
+
+      function vertausche(p, k){
+        var hilfe  = liste[p];
+        liste[p] = liste[k];
+        liste[k] = hilfe;
+      }
+
+
+
+
+    </script>
+  </head>
+  <body>
+    <h1>Einkaufsliste</h1>
+    <input type="text" id="produkt"> <br>
+    <input type="button" value="hinzufügen" onclick="hinzufuegen()"> <br>
+    <input type="button" value="sortieren" onclick="sortieren()">
+    <input type="button" value="Selectionsort" onclick="selectionSort()">
+    <input type="button" value="Bubblesort" onclick="bubbleSort()">
+    <p id="Ausgabe"> Deine Liste ist leer </p>
+
+  </body>
+</html>
