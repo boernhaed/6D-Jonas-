@@ -1,0 +1,51 @@
+<html>
+
+<head>
+
+	<meta charset="UTF-8">
+	<title>Pasch</title>
+  <style>
+  body {
+      background-color:#ffca99;
+    }
+</style>
+
+	<script>
+
+		function pasch() {
+		var wert = Math.random()*6 + 0.5 ;
+			wert = Math.round (wert) ;
+
+		var wert1 = Math.random()*6 + 0.5 ;
+			wert1 = Math.round (wert1) ;
+
+		var ausgabe = wert + "/" + wert1 ;
+
+
+		if(wert == wert1) {
+			ausgabeText =ausgabe + "<br><br> Du hast ein Pasch geworfen " ;
+		}
+		else{
+			ausgabeText = ausgabe
+		}
+
+		document.getElementById("ausgabe").innerHTML = ausgabeText ;
+		}
+
+	</script>
+
+</head>
+
+<body>
+
+	<h1>Pasch</h1>
+
+
+
+	<input type="button" value="Würfeln" onclick="pasch()">
+<center>
+    <p id="ausgabe"></p>
+</center>
+</body>
+
+</html>
