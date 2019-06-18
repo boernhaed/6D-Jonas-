@@ -35,7 +35,7 @@ function wuerfeln() {
 	alert(zahlenArray);
 
 	for(var i = 1; i < zahlenArray.length; i++) {
-	ausgabeText += "Du hast " + zahlenArray[i] + " mal 1 "+i+" gewürfelt! (" + zahlenArray[i]/anzahlVersuche*100 + "%)</br>";
+	ausgabeText += "Du hast " + zahlenArray[i] + " mal eine "+i+" gewürfelt! (" + zahlenArray[i]/anzahlVersuche*100 + "%)</br>";
 	}
 	
 	document.getElementById("ausgabe").innerHTML = ausgabeText;
@@ -57,8 +57,9 @@ function wuerfeln() {
 <h1>Würfelsimulation</h1>
 Anzahl der Würfe: <input type="text" id="eingabe"><br>
 <input type="button" value="Würfeln" onclick="wuerfeln()">
-
+<center>
 <p id="ausgabe"></p>
+</center>
 
 
 </body>
