@@ -1,0 +1,54 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title> Funktionen</title>
+
+<script>
+
+function addition(){
+var wert1 = document.getElementById("eingabe").value;
+wert1= parseInt(wert1);
+var wert2 = document.getElementById("eingabe2").value;
+wert2= parseInt (wert2);
+var ergebnis = wert1 + wert2;
+document.getElementById("ausgabe").innerHTML= ergebnis;
+}
+function subtraktion(){
+var wert1 = document.getElementById("eingabe").value;
+wert1= parseInt(wert1);
+var wert2 = document.getElementById("eingabe2").value;
+wert2= parseInt (wert2);
+var ergebnis2 = wert1 - wert2;
+document.getElementById("ausgabe2").innerHTML= ergebnis2;
+}
+function multiplikation(){
+var wert1 = document.getElementById("eingabe").value;
+wert1= parseInt(wert1);
+var wert2 = document.getElementById("eingabe2").value;
+wert2= parseInt (wert2);
+var ergebnis3 = wert1 * wert2;
+document.getElementById("ausgabe3").innerHTML= ergebnis3;
+}
+
+</script>
+
+</head>
+
+	<body bgcolor="#ffca99">
+
+<center>
+
+  <h1> "Taschenrechner" </h1>
+<input type="text" id="eingabe">
+<input type="text" id="eingabe2"><br>
+<input type="button" value="+" onclick="addition()">
+<input type="button" value="-" onclick="subtraktion()">
+<input type="button" value="*" onclick="multiplikation()">
+
+
+<p id="ausgabe">  Ausgabe: </p>
+<p id="ausgabe2">  </p>
+<p id="ausgabe3"> </p>
+
+</center>
+</html>
